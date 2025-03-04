@@ -11,7 +11,7 @@ public class UserDAO {
 
     //1. 데이터 등록
     //  insert into user values(?, ?, ?, ?, ?, now() );
-    public boolean create(String id, String password, String nickname, String gender, int birth) {
+    public static boolean create(String id, String password, String nickname, String gender, int birth) {
 
         boolean result = false;
         try {
