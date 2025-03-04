@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/join")
-public class JoinServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getRequestDispatcher("WEB-INF/views/users/join.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/users/login.jsp").forward(req, resp);
     }
 }
