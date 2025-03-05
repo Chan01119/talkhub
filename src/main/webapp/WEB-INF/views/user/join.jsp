@@ -15,17 +15,23 @@
     h1{
         text-align: center;
     }
+    h3{
+        text-align: center;
+    }
 
     p{
         font-size: large;
         font-weight: 500;
         text-align: center;
     }
+    div{
+        text-align: center;
+    }
 </style>
 <body>
 <h1>TalkHub</h1>
 <h3>토크허브에 회원가입하기</h3>
-<form action="${pageContext.request.contextPath }/join-proceed">
+<form action="${pageContext.request.contextPath }/join-proceed" method="post">
     <div>
         <label>아이디</label>
     <div>

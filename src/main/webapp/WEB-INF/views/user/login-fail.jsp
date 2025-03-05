@@ -1,15 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: USER
-  Date: 25. 3. 4.
-  Time: 오후 5:48
+  Date: 25. 3. 5.
+  Time: 오후 4:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>TalkHub로그인</title>
+    <title>TalkHub</title>
 </head>
 <style>
     h1 {
@@ -21,15 +20,20 @@
         font-weight: 500;
         text-align: center;
     }
+    div{
+        text-align: center;
+    }
 </style>
 <body>
-<h1>TalkHub 로그인 :></h1>
-<h3>로그인 하세열 ㅋㅅㅋ</h3>
-<form action="${pageContext.request.contextPath }/login-proceed">
+<h1>Talkhub 로그인 실패 !</h1>
+<p>
+    아이디 또는 비밀번호가 일치하지 않습니다. 다시 입력하여 주십시오.
+</p>
+<form action="${pageContext.request.contextPath }/login-proceed" method="post">
     <div>
         <label>아이디</label>
         <div>
-            <input type="text" name="id"/>
+            <input type="text" name="id" value="${id}"/>
         </div>
     </div>
     <div>
@@ -37,11 +41,12 @@
         <div>
             <input type="password" name="password"/>
         </div>
-        <div>
-            <button
-                    type="submit">등록하기
-            </button>
-        </div>
-</form>
+    </div>
+    <p style="color: red; font-size: small">
+        ${error}
+    </p>
+    <div>
+        <button type="submit">사용자인증</button>
+    </div>
 </body>
 </html>

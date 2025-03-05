@@ -24,7 +24,9 @@ public class LoginProceedServlet extends HttpServlet {
 
         if (found == null) {
             // id에 해당하는 정보가 없다.
-            req.getRequestDispatcher("WEB-INF/views/users/login-fail.jsp").forward(req, resp);
+            req.setAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
+            req.setAttribute("id", id);
+            req.getRequestDispatcher("WEB-INF/views/user/login-fail.jsp").forward(req, resp);
         }else {
             if(found.getPassword().equals(password)) {
                 // 인증성공
@@ -33,7 +35,9 @@ public class LoginProceedServlet extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + "/index");
             }else {
                 //인증실패
-                req.getRequestDispatcher("WEB-INF/views/users/login-fail.jsp").forward(req, resp);
+                req.setAttribute("error", "아이디 또는 비밀번호가 일치하지 않습니다.");
+                req.setAttribute("id", id);
+                req.getRequestDispatcher("WEB-INF/views/user/login-fail.jsp").forward(req, resp);
             }
         }
     }
