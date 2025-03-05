@@ -2,6 +2,7 @@ package org.codenova.talkhub.model.dao;
 
 import com.mysql.cj.jdbc.Driver;
 import org.codenova.talkhub.model.vo.User;
+import org.codenova.talkhub.util.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,11 +21,9 @@ public class UserDAO {
 
         boolean result = false;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://database-1.c1sqywyu24kc.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
-                    "admin", "1q2w3e4r");
+            Connection conn = ConnectionFactory.open();
 
-            PreparedStatement ps = connection.prepareStatement("insert into users values(?, ?, ?, ?, ?, now())");
+            PreparedStatement ps = conn.prepareStatement("insert into users values(?, ?, ?, ?, ?, now())");
             ps.setString(1, id);
             ps.setString(2, password);
             ps.setString(3, nickname);
@@ -34,7 +33,7 @@ public class UserDAO {
             int r = ps.executeUpdate();
             result = true;  //r값을 확인만하고 result 를 true 로 설정한 이유는 ?
 
-            connection.close();
+            conn.close();
         } catch (Exception e) {
             System.out.println("UserDAO.create :" + e.toString());
         }
@@ -52,9 +51,7 @@ public class UserDAO {
     public static User findById(String specificId) {
         User one = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://database-1.c1sqywyu24kc.ap-northeast-2.rds.amazonaws.com:3306/talkhub",
-                                                                "admin", "1q2w3e4r");
+            Connection conn = ConnectionFactory.open();
 
             PreparedStatement ps = conn.prepareStatement("select * from users where id = ?");
             ps.setString(1, specificId);
