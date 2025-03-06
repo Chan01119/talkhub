@@ -8,7 +8,7 @@ public class User {
     private String nickname;
     private String gender;
     private int birth;
-    private Date createAt;  // java.util.Date import
+    private Date createdAt;  // java.util.Date import
 
 
     // 기본생성자, 풀생성자, setter, getter
@@ -17,13 +17,13 @@ public class User {
     public User() {
     }
 
-    public User(String id, String password, String nickname, String gender, int birth, Date createAt) {
+    public User(String id, String password, String nickname, String gender, int birth, Date createdAt) {
         this.id = id;
         this.password = password;
         this.nickname = nickname;
         this.gender = gender;
         this.birth = birth;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
     }
 
     public String getId() {
@@ -66,11 +66,11 @@ public class User {
         this.birth = birth;
     }
 
-    public Date getCreateAt() {
-        return createAt;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }
