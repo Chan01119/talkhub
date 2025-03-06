@@ -12,13 +12,21 @@
     <title>TalkHub</title>
 </head>
 <style>
-    h1{
+    h1 {
         text-align: center;
     }
 
-    p{
+    h3 {
+        text-align: center;
+    }
+
+    p {
         font-size: large;
         font-weight: 500;
+        text-align: center;
+    }
+
+    div {
         text-align: center;
     }
 </style>
@@ -28,29 +36,29 @@
 <form action="${pageContext.request.contextPath }/join-proceed">
     <div>
         <label>아이디</label>
-    <div>
-        <input type="text" name="id"/>
-    </div>
+        <div>
+            <input type="text" name="id"/>
+        </div>
     </div>
     <div>
         <label>비밀번호</label>
-    <div>
-        <input type="password" name="password"/>
-    </div>
+        <div>
+            <input type="password" name="password"/>
+        </div>
     </div>
     <div>
         <label>활동명</label>
-    <div>
-        <input type="text" name="nickname"/>
-    </div>
+        <div>
+            <input type="text" name="nickname"/>
+        </div>
     </div>
     <div>
         <label>성별</label>
-    <div>
-        <label><input type="radio" value="남" name="gender"/>남</label>
-        <label><input type="radio" value="여" name="gender"/>여</label>
-        <label><input type="radio" value="비공개" name="gender"/>비공개</label>
-    </div>
+        <div>
+            <label><input type="radio" value="남" name="gender"/>남</label>
+            <label><input type="radio" value="여" name="gender"/>여</label>
+            <label><input type="radio" value="비공개" name="gender"/>비공개</label>
+        </div>
         <div>
             <label>출생년도</label>
             <div>

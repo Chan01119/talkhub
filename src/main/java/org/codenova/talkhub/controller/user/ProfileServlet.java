@@ -1,4 +1,4 @@
-package org.codenova.talkhub.controller.User;
+package org.codenova.talkhub.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

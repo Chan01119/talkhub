@@ -1,24 +1,20 @@
-package org.codenova.talkhub.controller.User;
+package org.codenova.talkhub.controller.posts;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet("/logout")
-public class LogoutProceedServlet extends HttpServlet {
+@WebServlet("/posts-create")
+public class PostsCreate extends HttpServlet {
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        HttpSession session = req.getSession();
+        req.getRequestDispatcher("WEB-INF/views/posts/create.jsp").forward(req, resp);
 
-        if (session.getAttribute("user") !=null) {
-            session.removeAttribute("user");
-        }
-        resp.sendRedirect(req.getContextPath());
     }
 }

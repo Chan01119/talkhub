@@ -21,11 +21,14 @@
         font-weight: 500;
         text-align: center;
     }
+    div{
+        text-align: center;
+    }
 </style>
 <body>
 <h1>TalkHub 로그인 :></h1>
 <h3>로그인 하세열 ㅋㅅㅋ</h3>
-<form action="${pageContext.request.contextPath }/login-proceed">
+<form action="${pageContext.request.contextPath }/login-proceed" method="post">
     <div>
         <label>아이디</label>
         <div>

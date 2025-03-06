@@ -24,7 +24,7 @@
     <c:otherwise>
         <div>
             <a href="${pageContext.request.contextPath}/login">로그인</a>
-            <a href="${pageContext.request.contextPath}/login">회원가입</a>
+            <a href="${pageContext.request.contextPath}/join">회원가입</a>
         </div>
     </c:otherwise>
 </c:choose>

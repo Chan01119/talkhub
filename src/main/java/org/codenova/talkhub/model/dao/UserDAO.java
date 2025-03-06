@@ -41,13 +41,6 @@ public class UserDAO {
     } // end boolean create(String id, String password, ....) ======================================
 
 
-    public User findByuId(String specificId) {
-        User one = null;
-
-
-
-        return null;
-    }
     public static User findById(String specificId) {
         User one = null;
         try {
