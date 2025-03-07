@@ -11,27 +11,18 @@
     <title>TalkHub</title>
 </head>
 <style>
-    h1 {
+    body {
         text-align: center;
     }
-
-    h3 {
-        text-align: center;
-    }
-
     p {
         font-size: large;
         font-weight: 500;
-        text-align: center;
-    }
-
-    div {
-        text-align: center;
     }
 </style>
 <body>
 <h1>TalkHub글쓰기</h1>
-<form action="${pageContext.request.contextPath }/post-create-proceed">
+<hr/>
+<form action="${pageContext.request.contextPath }/posts-create-proceed">
     <div>
         <label>작성자 아이디</label>
         <div>
@@ -54,6 +45,11 @@
         <label>내용을 써주세요.</label>
         <div>
             <input type="text" name="context">
+        </div>
+        <div>
+            <button
+                    type="submit">등록하기
+            </button>
         </div>
     </div>
 </form>

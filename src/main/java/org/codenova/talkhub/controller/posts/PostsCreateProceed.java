@@ -9,7 +9,7 @@ import org.codenova.talkhub.model.dao.PostsDAO;
 
 import java.io.IOException;
 
-@WebServlet("/post-create-proceed")
+@WebServlet("/posts-create-proceed")
 public class PostsCreateProceed extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class PostsCreateProceed extends HttpServlet {
                 title,
                 context );
         if (result) {
-            resp.sendRedirect(req.getContextPath() + "/list");
+            resp.sendRedirect(req.getContextPath() + "/posts-list");
         }else {
             req.getRequestDispatcher("WEB-INF/views/posts/fail.jsp").forward(req, resp);
         }
