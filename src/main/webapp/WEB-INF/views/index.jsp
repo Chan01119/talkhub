@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>TalkHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <h1><a href="${pageContext.request.contextPath}/index">TalkHub</a></h1>
